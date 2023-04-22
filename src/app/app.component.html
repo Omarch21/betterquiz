@@ -9,8 +9,8 @@
   <mat-sidenav-container class="example-container">
     <mat-sidenav #sidenav1 mode="side" [opened]="true" > 
       <mat-nav-list>
-          <a class="homeicon" routerLink="/" routerLinkActive="active" mat-list-item class="button1" [ngClass]="{'active':activeLink === 'home'}" (click)="setActiveLink('home')"><mat-icon class="icon1">home</mat-icon></a>
-          <a class="loginicon" routerLink="/login" routerLinkActive="active" mat-list-item [ngClass]="{'active':activeLink === 'login'}" (click)="setActiveLink('login')"> <mat-icon class="icon1">account_circle</mat-icon></a>
+          <a class="homeicon" routerLink="/" routerLinkActive="active" mat-list-item class="button1" [ngClass]="{'active':router.isActive('/',true)}" (click)="setActiveLink('/')"><mat-icon class="icon1">home</mat-icon></a>
+          <a class="loginicon" routerLink="/login" routerLinkActive="active" mat-list-item [ngClass]="{'active':router.isActive('/login',true)}" (click)="setActiveLink('/login')"> <mat-icon class="icon1">account_circle</mat-icon></a>
       </mat-nav-list>
     </mat-sidenav>
       

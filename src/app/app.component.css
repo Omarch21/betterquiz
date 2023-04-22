@@ -30,6 +30,6 @@
 }
 
 a.active{
-  border-left: solid 2px greenyellow;
+  border-left: solid 1px greenyellow;
   transition: ease-in-out 0.4s;
 }

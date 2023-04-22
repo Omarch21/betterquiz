@@ -1,5 +1,26 @@
 <div class="form1">
     <div class="logindiv">
-        Login
+       
+       
+        <form [formGroup]="loginform" >
+         <br>
+          <h1 class="logintext">Login</h1>
+      
+          <div class="emailtext">Email</div>
+               <div class="container1">
+              
+               <mat-icon class="formlogo">account_circle</mat-icon>
+                <input formControlName = "email" type="email" placeholder="email" class="input" >
+                </div>
+            
+        
+                <div class="passwordtext">Password</div>
+               <div class="container2">
+                <mat-icon class="formlogo">vpn_key</mat-icon>
+                 <input formControlName = "password" type="password" placeholder="password" class="input" >
+                 </div>
+            
+        
+        </form>
     </div>
 </div>
