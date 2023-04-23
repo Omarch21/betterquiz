@@ -2,25 +2,72 @@
     <div class="logindiv">
        
        
-        <form [formGroup]="loginform" >
+       
+            <div class="head">
+            <div (click)="changeTab('signup')"class="signupTab">
+                SIGN-UP
+            </div>
+            <div (click)="changeTab('login')" class="loginTab active">
+                LOGIN
+            </div>
+        </div>
+        <div id="form-body" class="body1">
+          
+            <div class="bodylogin active">
+                <form [formGroup]="loginform" class="formlogin">
          <br>
           <h1 class="logintext">Login</h1>
-      
-          <div class="emailtext">Email</div>
+            
+           
                <div class="container1">
               
-               <mat-icon class="formlogo">account_circle</mat-icon>
-                <input formControlName = "email" type="email" placeholder="email" class="input" >
+                 <mat-icon class="formlogo">account_circle</mat-icon>
+                <input formControlName = "email" type="email" class="input" >
+                <br><span class="emailtext">email</span>
                 </div>
             
         
-                <div class="passwordtext">Password</div>
+               
                <div class="container2">
-                <mat-icon class="formlogo">vpn_key</mat-icon>
-                 <input formControlName = "password" type="password" placeholder="password" class="input" >
+                <mat-icon class="formlogo2">vpn_key</mat-icon>
+                 <input formControlName = "password" type="password" class="input" >
+                 <br>
+                <span class="passwordtext">password</span>
                  </div>
             
-        
-        </form>
+                 <button   mat-raised-button class="loginbutton">Login</button>
+                 </form>
+                 </div>
+                 
+       
+        <div class="bodysignup">
+            <br>
+             <h1 class="logintext">Signup</h1>
+               
+              
+                  <div class="container1">
+                 
+                    <mat-icon class="formlogo">account_circle</mat-icon>
+                   <input  type="email" class="input" >
+                   <br><span class="emailtext">email</span>
+                   </div>
+                   <div class="container3">
+                 
+                    <mat-icon class="formlogo">envelope</mat-icon>
+                   <input  type="email" class="input" >
+                   <br><span class="emailtext">username</span>
+                   </div>
+           
+                  
+                  <div class="container2">
+                   <mat-icon class="formlogo2">vpn_key</mat-icon>
+                    <input  type="password" class="input" >
+                    <br>
+                   <span class="passwordtext">password</span>
+                    </div>
+               
+                    <button   mat-raised-button class="loginbutton">Login</button>
+                    </div>
+                    </div>
     </div>
 </div>

@@ -11,26 +11,25 @@
 }
 .logindiv{
     background-color:rgb(24, 24, 24);
-    width:500px;
-    height:550px;
+    width:400px;
+    height:450px;
     color:greenyellow;
-    display:flex;
-    justify-content:center;
     border-radius:20px;
     text-align:center;
+    
     box-shadow: 0px 0px 10px 5px rgb(110, 110, 110);
 }
 .input{
     background-color:rgb(44, 43, 43);
-    border-color:white 1px;
-    border-style: solid 1px;
+   
+    border:2px solid rgb(116, 116, 116);
     outline:none;
-    height:50px;
+    height:40px;
     width:200px;
     border-radius:20px;
     color:greenyellow;
     font-size:16px;
-    padding-left:42px;
+    padding-left:48px;
 
   
 }
@@ -45,29 +44,74 @@
 
 }
 .container1 {
-  
+    
+    margin-top:65px;
+    justify-content: center;
     position: relative;
   }
   
   .mat-icon {
     position: absolute;
-    top: 15px;
-    left: 12px;
+    top: 10px;
+    width:28px;
+    margin-left:10px;
+    border-right: 1px solid greenyellow;
   }
   .container2{
-    
+    margin-top:50px;
+    position:relative;
+  
+  }
+  .container3{
+    margin-top:50px;
     position:relative;
   
   }
   .emailtext{
-    margin-top:80px;
+ 
+
     font-family: "miami",sans-serif;
-    font-size: 20px;;
+    font-size: 20px;
+    position:absolute;
+    bottom:12px;
+    right:952px;
+    color:greenyellow;
+    z-index:5;
+    transition:0.4s;
+    pointer-events: none;
+  }
+ .input:invalid ~ .emailtext, .input:focus ~ .emailtext{
+
+    transform: translate(-10px,-22px);
+    background:rgb(44,43,43);
+    border-radius:10px;
+    font-size:15px;
+    border: 1px solid greenyellow;
+    padding:0 10px;
+  
   }
   .passwordtext{
-    margin-top:50px;
+    position:absolute;
+    bottom:14px;
+    right:918px;
     font-family: "miami",sans-serif;
-    font-size: 20px;;
+    font-size: 20px;
+    transition:0.4s;
+    pointer-events:none;
+  }
+  .input:invalid ~ .passwordtext, .input:focus ~ .passwordtext{
+
+    transform: translate(-18px,-22px);
+    background:rgb(44,43,43);
+    border-radius:10px;
+    font-size:15px;
+    border: 1px solid greenyellow;
+    padding:0 10px;
+  
+  }
+  .formlogin{
+    width:100%;
+    height:100%;
   }
   .logintext{
     margin-top:20px;
@@ -75,13 +119,91 @@
     font-size:40px;
     font-weight:bold;
     position:relative;
+    pointer-events:none;
+  
   }
+  .body1{
+    
+
+    width:100%;
+    height:100%;
+    justify-content:center;
+    display:flex;
+  }
+  .body1 > div{
+    width:100%;
+    height:100%;
+    transition: all 0.5s ease-in-out;
+   
+  }
+  .head{
+    display:flex;
+    width:100%;
+    height:50px;
+  }
+.loginTab,.signupTab{
+    width:50%;
+    height:100%;
+    text-align:center;
+    line-height:55px;
+    cursor:pointer;
+    background:transparent;
+    
+  }
+  .signupTab,.loginTab{
+    background:transparent;
+  }
+  .loginTab.active{
+    transition:ease-in-out 0.2s;
+    background:grey;
+    border-top-right-radius:10px;
+  }
+  .signupTab.active{
+    transition:ease-in-out 0.4s;
+    background:grey;
+    border-top-left-radius:10px;
+  }
+  .bodylogin, .bodysignup {
+    position:absolute;
+
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1;
+    
+  }
+  
+  
+  .bodylogin.active, .bodysignup.active {
+    opacity: 1;
+    transition: ease-in-out 0.4s;
+
+  }
+  .bodysignup {
+  opacity:0;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(-100%);
+  }
+.bodysignup.active {
+  transform: translateX(0);
+  opacity:1;
+}
   .logintext::after {
     color:greenyellow;
     content: '_';
     position: absolute;
     bottom: -0.1em; /* Position the "_" character below the text */
     animation: blink 2s infinite; /* Use the "blink" animation for 1 second, repeat infinitely */
+  }
+  button.loginbutton{
+    margin-top:50px;
+    background-color:greenyellow;
+    height:40px;
+    width:250px;
+    border-radius:20px;
+    opacity:0.8;
+    font-family:"miami",sans-serif;
   }
   
   /* Define the animation */
