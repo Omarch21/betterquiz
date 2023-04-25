@@ -8,6 +8,10 @@
     display:flex;
     justify-content:center;
     align-items:center;
+    background: linear-gradient(-45deg, greenyellow, #405a3d, #323331, #1b1b1b);
+    background-size: 500% 500%;
+    animation:gradientanimation ease 50s infinite;
+   
 }
 .logindiv{
     background-color:rgb(24, 24, 24);
@@ -16,8 +20,10 @@
     color:greenyellow;
     border-radius:20px;
     text-align:center;
-    
+    overflow:hidden;
     box-shadow: 0px 0px 10px 5px rgb(110, 110, 110);
+    transition:ease-in-out 0.4s;
+ 
 }
 .input{
     background-color:rgb(44, 43, 43);
@@ -62,10 +68,10 @@
     position:relative;
   
   }
-  .container3{
+  .container3, .container4{
     margin-top:50px;
     position:relative;
-  
+    
   }
   .emailtext{
  
@@ -74,7 +80,7 @@
     font-size: 20px;
     position:absolute;
     bottom:12px;
-    right:952px;
+    right:150px;
     color:greenyellow;
     z-index:5;
     transition:0.4s;
@@ -90,14 +96,50 @@
     padding:0 10px;
   
   }
+  .input:invalid ~ .usernametext, .input:focus~.usernametext{
+    transform:translate(-16px,-25px);
+    background:rgb(44,43,43);
+    border-radius:10px;
+    font-size:15px;
+    border: 1px solid greenyellow;
+    padding:0 10px;
+  }
+   .input:invalid ~ .confirmpassword, .input:focus~.confirmpassword{
+    transform:translate(-30px,-25px);
+    background:rgb(44,43,43);
+    border-radius:10px;
+    font-size:15px;
+    border: 1px solid greenyellow;
+    padding:0 10px;
+  }
+  .usernametext{
+    top:14px;
+    position:absolute;
+    right:114px;
+    pointer-events:none;
+    transition:0.4s;
+    font-family: "miami",sans-serif;
+    font-size:20px;
+  }
   .passwordtext{
     position:absolute;
     bottom:14px;
-    right:918px;
+    right:115px;
     font-family: "miami",sans-serif;
     font-size: 20px;
     transition:0.4s;
     pointer-events:none;
+   
+  }
+  .confirmpassword{
+    pointer-events:none;
+    position:absolute;
+   
+    bottom:14px;
+    right:48px;
+    font-family: "miami",sans-serif;
+    font-size:20px;
+    transition:0.4s
   }
   .input:invalid ~ .passwordtext, .input:focus ~ .passwordtext{
 
@@ -123,11 +165,11 @@
   
   }
   .body1{
+    overflow:hidden;
     
-
     width:100%;
     height:100%;
-    justify-content:center;
+   
     display:flex;
   }
   .body1 > div{
@@ -150,43 +192,45 @@
     background:transparent;
     
   }
+
   .signupTab,.loginTab{
     background:transparent;
   }
   .loginTab.active{
     transition:ease-in-out 0.2s;
-    background:grey;
+    background:rgb(75, 74, 74);
     border-top-right-radius:10px;
   }
   .signupTab.active{
     transition:ease-in-out 0.4s;
-    background:grey;
+    background:rgb(75, 74, 74);
     border-top-left-radius:10px;
   }
   .bodylogin, .bodysignup {
-    position:absolute;
-
+    justify-content:center;
+    position:relative;
     height: 100%;
     width: 100%;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
     z-index: 1;
-    
+    transform: translateX(-50%);
   }
   
   
   .bodylogin.active, .bodysignup.active {
     opacity: 1;
     transition: ease-in-out 0.4s;
-
+    transform: translateX(28%);
   }
   .bodysignup {
   opacity:0;
   transition: transform 0.5s ease-in-out;
-  transform: translateX(-100%);
+  transform: translateX(50%);
   }
 .bodysignup.active {
-  transform: translateX(0);
+  transform: translateX(-70%);
+  
   opacity:1;
 }
   .logintext::after {
@@ -228,5 +272,22 @@
     }
     100%{
         border-color: 1px white;
+    }
+  }
+  @keyframes gradientanimation{
+    0%{
+      background-position: 0 50%;
+    }
+    25%{
+      background-position: 50% 50%;
+    }
+    50%{
+      background-position: 100% 50%;
+    }
+    75%{
+      background-position: 50% 50%;
+    }
+    100%{
+      background-position: 0 50%;
     }
   }

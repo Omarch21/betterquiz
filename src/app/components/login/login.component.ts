@@ -17,16 +17,24 @@ export class LoginComponent {
       const signupbody = document.querySelector('.bodysignup');
       const loginTab = document.querySelector('.loginTab');
       const signupTab = document.querySelector('.signupTab');
+      const logindiv = document.getElementById('logindiv');
       if (tabName === 'signup') {
           loginTab?.classList.remove('active');
           signupTab?.classList.add('active');
           loginbody?.classList.remove('active');
           signupbody?.classList.add('active');
+          if(logindiv){
+ 
+            logindiv.style.height = '650px';
+          }
       } else if (tabName === 'login') {
           loginTab?.classList.add('active');
           signupTab?.classList.remove('active');
           loginbody?.classList.add('active');
           signupbody?.classList.remove('active');
+          if(logindiv){
+            logindiv.style.height = '';
+          }
       }
   }
 }
