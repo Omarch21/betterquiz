@@ -19,6 +19,15 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { provideStorage, getStorage } from '@angular/fire/storage';
+import { provideAuth, getAuth } from '@angular/fire/auth'
+import { environment } from 'src/environment/environment';
+import { HotToastModule } from '@ngneat/hot-toast';
+
+
+
 
 @NgModule({
   declarations: [
@@ -38,7 +47,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatSidenavModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(()=> getAuth()),
+    provideStorage(()=> getStorage()),
+    provideFirestore(()=> getFirestore()),
+    HotToastModule.forRoot(),
+
   ],
   providers: [],
   bootstrap: [AppComponent]
