@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FormControl,Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
-import { HotToastService } from '@ngneat/hot-toast/public-api';
+import { HotToastService } from '@ngneat/hot-toast';
 import { AuthService } from 'src/app/services/auth.service';
 import { UsersService } from 'src/app/services/users.service';
 import { Router } from '@angular/router';
