@@ -6,11 +6,6 @@ import { AuthService } from 'src/app/services/auth.service';
 import { UsersService } from 'src/app/services/users.service';
 import { Router } from '@angular/router';
 import { switchMap } from 'rxjs';
-@Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
-})
 export function passwordsMatch(): ValidatorFn{
   return(control: AbstractControl): ValidationErrors | null =>{
     const password = control.get('password')?.value;
@@ -22,6 +17,12 @@ export function passwordsMatch(): ValidatorFn{
     }
   }
 }
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
+
 export class LoginComponent implements OnInit{
   loginform = new FormGroup({
     email: new FormControl(null, Validators.required),
