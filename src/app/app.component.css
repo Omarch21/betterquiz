@@ -9,7 +9,7 @@
   background-color:grey;
 }
 .toolbar1 {
-    background-color: #333;
+    background-color: #222222;
     color: #fff;
     position:flex;
     z-index:2;
@@ -30,6 +30,9 @@
 }
 
 a.active{
-  border-left: solid 1px greenyellow;
+  border-left: solid 1px rgb(7, 7, 223);
   transition: ease-in-out 0.4s;
+}
+.logouticon{
+  top:750px;
 }

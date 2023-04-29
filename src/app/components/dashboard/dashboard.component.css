@@ -1,0 +1,46 @@
+.page{
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:Center;
+}
+.cards{
+    margin-top:200px;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    perspective:800px;
+}
+.card-container{
+    width:200px;
+    height:200px;
+    background-color:rgb(24, 67, 80);
+    border-radius:15px;
+    
+    cursor:pointer;
+    position:relative;
+    transition: 1s ease-in-out;
+    transform-style:preserve-3d;
+  
+
+}
+.card-back {
+    text-align:center;
+    transform: rotateY(0.5turn);
+    backface-visibility: hidden;
+  }
+  .card-front{
+    backface-visibility:hidden;
+    position:absolute;
+    text-align:center;
+  }
+
+  
+  .card-back {
+    transform: rotateY(0.5turn);
+    backface-visibility:hidden;
+  }
+  
+  .card-container.flipped {
+    transform: rotateY(0.5turn);
+  }

@@ -10,8 +10,9 @@ export function passwordsMatch(): ValidatorFn{
   return(control: AbstractControl): ValidationErrors | null =>{
     const password = control.get('password')?.value;
     const confirmpassword = control.get('confirmpassword')?.value;
+    
     if(password && confirmpassword && password !== confirmpassword){
-      return {passwordsDontMatch: true};
+      return {passwordsMatch: true};
     } else{
       return null;
     }

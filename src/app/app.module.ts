@@ -25,6 +25,7 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
 import { provideAuth, getAuth } from '@angular/fire/auth'
 import { environment } from 'src/environment/environment';
 import { HotToastModule } from '@ngneat/hot-toast';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 
@@ -33,7 +34,8 @@ import { HotToastModule } from '@ngneat/hot-toast';
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,7 @@ import { HotToastModule } from '@ngneat/hot-toast';
     provideAuth(()=> getAuth()),
     provideStorage(()=> getStorage()),
     provideFirestore(()=> getFirestore()),
-    HotToastModule.forRoot(),
+    HotToastModule.forRoot({autoClose:true}),
 
   ],
   providers: [],

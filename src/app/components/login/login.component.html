@@ -22,17 +22,17 @@
                <div class="container1">
               
                  <mat-icon class="formlogo">account_circle</mat-icon>
-                <input formControlName = "email" type="email" class="input" >
-                <br><span class="emailtext">email</span>
+                <input formControlName = "email" type="email" class="input" placeholder="Email">
+                <!--<br><span class="emailtext">email</span>-->
                 </div>
             
         
                
                <div class="container2">
                 <mat-icon class="formlogo2">vpn_key</mat-icon>
-                 <input formControlName = "password" type="password" class="input" >
+                 <input formControlName = "password" type="password" class="input" placeholder="password">
                  <br>
-                <span class="passwordtext">password</span>
+             <!--   <span class="passwordtext">password</span>-->
                  </div>
             
                  <button   mat-raised-button class="loginbutton">Login</button>
@@ -43,43 +43,43 @@
         <div class="bodysignup">
             <br>
              <h1 class="logintext">Signup</h1>
-               
+               <div class="signupcontainer">
               <form [formGroup]="signupform" (ngSubmit)="submit()">
                   <div class="container1">
                  
                     <mat-icon class="formlogo">mail</mat-icon>
-                   <input  type="email" class="input" formControlName="email">
-                   <mat-error *ngIf="email?.errors?.['required']"> Please enter an email address</mat-error>
-                   <mat-error *ngIf="email?.errors?.['email']"> Please enter a valid email address</mat-error>
-                   <br><span class="emailtext">email</span>
+                   <input mat-input type="email" class="input" formControlName="email" placeholder="Email " required>
+                   <mat-error *ngIf="email?.errors?.['required'] && (email?.dirty || email?.touched)">Email is required</mat-error>
+                   <mat-error *ngIf="email?.errors?.['email'] && (email?.dirty || email?.touched)">Email format</mat-error>
+                   <br>
                    </div>
                    <div class="container3">
                  
                     <mat-icon class="formlogo">account_circle</mat-icon>
-                   <input  type="string" class="input" formControlName="username">
-                   <mat-error *ngIf="username?.errors?.['required']"> Please enter a username</mat-error>
-                   <br><span class="usernametext">username</span>
+                   <input  type="string" class="input" formControlName="username" placeholder="Username" required>
+                   <mat-error *ngIf="username?.errors?.['required'] && (username?.dirty || username?.touched)">Username is required</mat-error>
+                  <!-- <br><span class="usernametext">username</span>-->
                    </div>
            
                   
                   <div class="container2">
                    <mat-icon class="formlogo2">vpn_key</mat-icon>
-                    <input  type="password" class="input" formControlName="password">
-                    <mat-error *ngIf="password?.errors?.['required']"> Please enter a password</mat-error>
+                    <input  type="password" class="input" formControlName="password" placeholder="password" required>
+                    <mat-error *ngIf="password?.errors?.['required'] && (password?.dirty || password?.touched)">Password is required</mat-error>
                     <br>
-                   <span class="passwordtext">password</span>
+                 <!--  <span class="passwordtext">password</span>-->
                     </div>
                
                     <div class="container4">
                         <mat-icon class="formlogo3">vpn_key</mat-icon>
-                         <input  type="password" class="input" formControlName="confirmpassword">
-                        
-                         <mat-error *ngIf="signupform.errors?.['passwordMatch']"> Passwords do not match</mat-error>
+                         <input  type="password" class="input" formControlName="confirmpassword" placeholder="password" required>
+                         <mat-error *ngIf="signupform.errors?.['passwordsMatch']"> Passwords do not match</mat-error>
                          <br>
-                        <span class="confirmpassword" formControlName="confirmpassword">confirm password</span>
+                        <!--<span class="confirmpassword" formControlName="confirmpassword">confirm password</span>-->
                          </div>
                     <button  type="submit" mat-raised-button class="loginbutton">Register</button>
                     </form>
+                    </div>
                     </div>
                     </div>
     </div>

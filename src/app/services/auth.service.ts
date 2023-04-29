@@ -5,6 +5,7 @@ import {from, Observable} from 'rxjs'
 export class AuthService{
 
     constructor(private auth: Auth){}
+    currentUser$ = authState(this.auth);
   signup(email: string, password: string): Observable<UserCredential>{
     return from(createUserWithEmailAndPassword(this.auth, email,password))
   }
