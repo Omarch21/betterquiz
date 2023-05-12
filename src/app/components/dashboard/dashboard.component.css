@@ -54,6 +54,13 @@
     transition: 1s ease-in-out;
     transform-style: preserve-3d;
   }
+.container-array{
+  height:600px;
+    width: 100%;
+    display:flex;
+    flex-shrink:0;
+    
+}
   
   .card-front {
     text-align:center;

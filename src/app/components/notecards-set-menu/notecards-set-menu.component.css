@@ -1,0 +1,42 @@
+.nameinput{
+    border-radius:4px;
+    width:200px;
+    height:30px;
+    background-color:rgb(216, 215, 231);
+    border-style:none;
+    outline:none;
+}
+.nameinput:focus{
+    box-shadow: 0px 0px 5px 5px rgb(64, 86, 185);
+    transition:ease-in-out 0.2s;
+
+}
+.formfield1{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-right:20px;
+}
+.add-card{
+    color:white;
+}
+.input-card{
+    background-color:white;
+    width:500px;
+    height:40%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+.container{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center
+}
+.card-body{
+    border-top: solid 1px grey;
+    background-color:rgb(255, 255, 255);
+    height:100%;
+}
