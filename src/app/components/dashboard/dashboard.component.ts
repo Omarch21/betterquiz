@@ -14,7 +14,9 @@ user$ = this.usersService.getCurrentAccountProfile$;
 card: HTMLElement |  null = null;
 cardindex = 0;
 cardwidth:number = 0;
-cards: HTMLElement[] = [];
+cards: any[] = [];
+divArray: number[] = [];
+divCount: number=5;
 flipCard(event: Event){
   const cardContainer = (event.target as HTMLElement).closest('.card-container');
   if(cardContainer){
@@ -22,15 +24,24 @@ flipCard(event: Event){
   }
 }
 ngOnInit():void{
+  this.divCount = 10;
+  const count = 10;
+  this.user$.subscribe((user) =>{
+    const value= user?.val;
+  if(value){
+  this.divArray = Array(value).fill(0).map((x,i)=>i);
   const cardContainer = document.querySelectorAll('.card-container') as NodeListOf<HTMLElement>
-  if(cardContainer.length > 0){
+  console.log(cardContainer);
+  if(value > 0){
     this.cardwidth = cardContainer[0].offsetWidth ;
-    for (let i = 0; i < cardContainer.length; i++) {
-      this.renderer.setStyle(cardContainer[i], 'width', `${this.cardwidth}px`);
-      this.cards.push(cardContainer[i]);
+    for (let i = 0; i < value; i++) {
+
+      this.cards.push(i);
     }
 
   }
+}
+})
 }
 
 
@@ -44,6 +55,7 @@ nextCard(): void {
   const leftPosition = -(this.cardindex * this.cardwidth) ;
   const carousel = document.querySelector('.card-carousel') as HTMLElement;
   carousel.style.transform = `translateX(${leftPosition}px)`;
+  console.log(this.cards)
   console.log(this.cardwidth);
 }
 
@@ -57,4 +69,4 @@ prevCard(): void {
   const carousel = document.querySelector('.card-carousel') as HTMLElement;
   carousel.style.transform = `translateX(${leftPosition}px)`;
 }
-  }
+}

@@ -4,6 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {canActivate, redirectLoggedInTo, redirectUnauthorizedTo} from '@angular/fire/auth-guard'
+import { NotecardsSetMenuComponent } from './components/notecards-set-menu/notecards-set-menu.component';
 const redirectUnauthorized = () => redirectUnauthorizedTo(['login']);
 const redirectLoggedIn = () => redirectLoggedInTo(['dashboard']);
 const routes: Routes = [
@@ -19,6 +20,11 @@ const routes: Routes = [
 component: DashboardComponent,
 ...canActivate(redirectUnauthorized)
 },
+{
+  path: 'create-set',
+  component:NotecardsSetMenuComponent,
+  ...canActivate(redirectUnauthorized)
+}
 ];
 
 @NgModule({

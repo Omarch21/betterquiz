@@ -4,5 +4,6 @@ export interface AccountUser{
     firstName?: string,
     lastName?: string,
     username: string,
-    photoURL?: string   
+    photoURL?: string   ,
+    val?: number
 }

@@ -1,46 +1,48 @@
 <div class="page">
-    <div class="container">
-      <div class="card-carousel">
-        <div class="card-container carousel-item" (click)="flipCard($event)">
-          <div class="card-front">
-            front1
-          </div>
-          <div class="card-back">
-            back
-          </div>
+  <div class="container">
+    <div class="card-carousel">
+    <div class="container-array"*ngFor="let i of divArray">
+      <div class="card-container carousel-item"(click)="flipCard($event)">
+        <div class="card-front">
+          front{{i}}
+         
         </div>
-  
-        <div class="card-container carousel-item" (click)="flipCard($event)">
-          <div class="card-front">
-            front2
-          </div>
-          <div class="card-back">
-            back
-          </div>
+        <div class="card-back">
+          back
         </div>
-  
-        <div class="card-container carousel-item" (click)="flipCard($event)">
-          <div class="card-front">
-            front3
-          </div>
-          <div class="card-back">
-            back
-          </div>
+      </div>
+</div>
+      <div class="card-container carousel-item" (click)="flipCard($event)">
+        <div class="card-front">
+          front2
         </div>
-  
-        <div class="card-container carousel-item" (click)="flipCard($event)">
-          <div class="card-front">
-            front4
-          </div>
-          <div class="card-back">
-            back
-          </div>
+        <div class="card-back">
+          back
+        </div>
+      </div>
+
+      <div class="card-container carousel-item" (click)="flipCard($event)">
+        <div class="card-front">
+          front3
+        </div>
+        <div class="card-back">
+          back
+        </div>
+      </div>
+
+      <div class="card-container carousel-item" (click)="flipCard($event)">
+        <div class="card-front">
+          front4
+        </div>
+        <div class="card-back">
+          back
         </div>
       </div>
     </div>
-  
-    <div class="arrow-div">
-      <mat-icon class="arrows arrow-left" (click)="prevCard()">keyboard_arrow_left</mat-icon>
-      <mat-icon class="arrows arrow-right" (click)="nextCard()">keyboard_arrow_right</mat-icon>
-    </div>
   </div>
+
+  <div class="arrow-div">
+    <mat-icon class="arrows arrow-left" (click)="prevCard()">keyboard_arrow_left</mat-icon>
+    <mat-icon class="arrows arrow-right" (click)="nextCard()">keyboard_arrow_right</mat-icon>
+  </div>
+</div>
