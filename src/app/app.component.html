@@ -1,37 +1,5 @@
-<div class="page1">
-  <mat-toolbar class="toolbar1">
-    <button mat-icon-button class="button5"(click)="sidenav1.toggle()">
-      <mat-icon >menu</mat-icon>
-    </button>
+<div>
+  <mat-toolbar color="primary">
+    toolbar
   </mat-toolbar>
-
-
-  <mat-sidenav-container class="example-container">
-    <mat-sidenav #sidenav1 mode="side" [opened]="true" > 
-      <ng-container *ngIf="user$|async as user;else notloggedin">
-      <mat-nav-list>
-          <a class="homeicon" routerLink="/" routerLinkActive="active" mat-list-item class="button1" [ngClass]="{'active':router.isActive('/',true)}" (click)="setActiveLink('/')"><mat-icon class="icon1">home</mat-icon></a>
-          <a class="dashboardicon"   mat-list-item   routerLink="/dashboard" routerLinkActive="active" mat-list-item class="button1" [ngClass]="{'active':router.isActive('/dashboard',true)}" (click)="setActiveLink('/dashboard')"><mat-icon class="icon1">dashboard</mat-icon></a>
-          <a class="logouticon"   mat-list-item   (click)="logout()"><mat-icon class="icon1">logout</mat-icon></a>
-      </mat-nav-list>
-      </ng-container>
-      <ng-template #notloggedin>
-        <mat-nav-list>
-            <a class="homeicon" routerLink="/" routerLinkActive="active" mat-list-item class="button1" [ngClass]="{'active':router.isActive('/',true)}" (click)="setActiveLink('/')"><mat-icon class="icon1">home</mat-icon></a>
-            <a class="loginicon" routerLink="/login" routerLinkActive="active" mat-list-item [ngClass]="{'active':router.isActive('/login',true)}" (click)="setActiveLink('/login')"> <mat-icon class="icon1">mail</mat-icon></a>
-          
-        </mat-nav-list>
-        </ng-template>
-    </mat-sidenav>
-      
-            <router-outlet></router-outlet>
-  
-  
-
-    
-  </mat-sidenav-container>
- 
-
-
 </div>
-

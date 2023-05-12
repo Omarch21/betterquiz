@@ -26,6 +26,7 @@ import { provideAuth, getAuth } from '@angular/fire/auth'
 import { environment } from 'src/environment/environment';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NotecardsSetMenuComponent } from './components/notecards-set-menu/notecards-set-menu.component';
 
 
 
@@ -35,7 +36,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    NotecardsSetMenuComponent
   ],
   imports: [
     BrowserModule,
